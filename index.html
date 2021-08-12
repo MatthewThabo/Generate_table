@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="table.css">
+     <link rel="stylesheet" type="text/css" href="skins/color-1.css">
+    <title>Generate-the-table</title>
+
+</head>
+<body>
+
+<h2>Generate-the-table</h2>
+<br>
+<button class="hover-in-shadow" onclick="myFunction()">Show my table</button>
+<br><br>
+
+<div id="yesone" hidden>
+<table id="myTable">
+  <tr>
+    <th>Colour</th>
+    <th>Number</th>
+    <th>Name</th>
+    <th>Animal</th>
+  </tr>
+  <tr>
+    <td>Red</td>
+    <td>13</td>
+    <td>Thiza</td>
+    <td>Dog</td>
+  </tr>
+  <tr>
+    <td>Blue</td>
+    <td>16</td>
+    <td>Tsiga</td>
+    <td>Cat</td>
+  </tr>
+  <tr>
+    <td>Green</td>
+    <td>18</td>
+    <td>Voja</td>
+    <td>Mouse</td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td>19</td>
+    <td>Man X</td>
+    <td>Tiger</td>
+  </tr>
+</table>
+<br><br>
+<button class="hover-in-shadow" onclick="sortTable()">Shuffle a table</button>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("yesone");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function sortTable() {
+  let table = document.getElementById("myTable");
+
+  let rowsCollection = table.querySelectorAll("tr");
+
+  let rows = Array.from(rowsCollection)
+    .slice(1);
+
+  shuffleArray(rows);
+
+  for (const row of rows) {
+    table.appendChild(row);
+  }
+}
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
+</script>
+<p class="copyright-text">&copy; 2020 ThaboMatlenana</p>
+</body>
+</html>
