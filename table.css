@@ -37,14 +37,16 @@ body{
 a{
     text-decoration: none;
 }
-.container {
-    max-width: 1140px;
-    /* background-color: red; */
-    margin: auto;
+
+.container .button{
+    background-color: transparent;
+    left: 40%;
 }
+
 .row{
     display: flex;
     flex-wrap: wrap;
+    vertical-align: middle;
 }
 .justify-content-between{
     justify-content: space-between;
